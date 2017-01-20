@@ -13,17 +13,23 @@ namespace mads256c.Secure
         {
             get
             {
-                if (_value - _randomValue == 0)
-                    return false;
-                else
-                    return true;
+                unchecked
+                {
+                    if (_value - _randomValue == 0)
+                        return false;
+                    else
+                        return true;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next();
-                int i = value ? 1 : 0;
-                _value = i + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next();
+                    int i = value ? 1 : 0;
+                    _value = i + _randomValue;
+                }
             }
             
         }
@@ -60,13 +66,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return (byte)(_value - _randomValue);
+                unchecked
+                {
+                    return (byte)(_value - _randomValue);
+                }
             }
 
             set
             {
-                _randomValue = (byte)SecureRandom.random.Next();
-                _value = (byte)(value + _randomValue);
+                unchecked
+                {
+                    _randomValue = (byte)SecureRandom.random.Next();
+                    _value = (byte)(value + _randomValue);
+                }
             }
         }
 
@@ -117,13 +129,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return (char)(_value - _randomValue);
+                unchecked
+                {
+                    return (char)(_value - _randomValue);
+                }
             }
 
             set
             {
-                _randomValue = (char)SecureRandom.random.Next();
-                _value = (char)(value + _randomValue);
+                unchecked
+                {
+                    _randomValue = (char)SecureRandom.random.Next();
+                    _value = (char)(value + _randomValue);
+                }
             }
         }
         public SecureChar(char value = '\x0000') => Value = value;
@@ -162,13 +180,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return _value - _randomValue;
+                unchecked
+                {
+                    return _value - _randomValue;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next(-1024, 1024);
-                _value = value + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next(-1024, 1024);
+                    _value = value + _randomValue;
+                }
             }
         }
 
@@ -219,13 +243,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return _value - _randomValue;
+                unchecked
+                {
+                    return _value - _randomValue;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next(-1024, 1024);
-                _value = value + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next(-1024, 1024);
+                    _value = value + _randomValue;
+                }
             }
         }
 
@@ -277,13 +307,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return _value - _randomValue;
+                unchecked
+                {
+                    return _value - _randomValue;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next(-1024, 1024);
-                _value = value + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next(-1024, 1024);
+                    _value = value + _randomValue;
+                }
             }
         }
 
@@ -335,13 +371,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return _value - _randomValue;
+                unchecked
+                {
+                    return _value - _randomValue;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next();
-                _value = value + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next();
+                    _value = value + _randomValue;
+                }
             }
         }
 
@@ -393,13 +435,19 @@ namespace mads256c.Secure
         {
             get
             {
-                return _value - _randomValue;
+                unchecked
+                {
+                    return _value - _randomValue;
+                }
             }
 
             set
             {
-                _randomValue = SecureRandom.random.Next();
-                _value = value + _randomValue;
+                unchecked
+                {
+                    _randomValue = SecureRandom.random.Next();
+                    _value = value + _randomValue;
+                }
             }
         }
 

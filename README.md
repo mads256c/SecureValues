@@ -4,7 +4,7 @@ A way to securely store values in memory. This was made as an anti-cheat-engine 
 Just add Secure.cs to your project.
 The variables are used the same way as a standard variable of its type.
 
-```
+```C#
 using mads256c.secure;
 
 public class Demo
